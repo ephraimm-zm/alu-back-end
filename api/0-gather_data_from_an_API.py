@@ -5,5 +5,5 @@ import requests
 import sys
 
 def main():
-	"""main function"""
-	base_url = "https://jsonplaceholder.typicode.com/"
+    """main function"""
+    base_url = "https://jsonplaceholder.typicode.com/"
