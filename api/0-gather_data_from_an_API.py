@@ -7,30 +7,18 @@ import sys
 
 def main():
     """main function"""
-    if len(sys.argv) != 2:
-        print("Usage: ./todos.py <employee_id>")
-        return
-
-    try:
-        employeeID = int(sys.argv[1])
-    except ValueError:
-        print("Employee ID must be an integer.")
-        return
-
+    employeeID = int(sys.argv[1])
+    
     todos_url = "https://jsonplaceholder.typicode.com/todos"
     users_url = f"https://jsonplaceholder.typicode.com/users/{employeeID}"
 
-    try:
-        todos_response = requests.get(todos_url)
-        todos_response.raise_for_status()
-        todos = todos_response.json()
+    todos_response = requests.get(todos_url)
+    todos_response.raise_for_status()
+    todos = todos_response.json()
 
-        user_response = requests.get(users_url)
-        user_response.raise_for_status()
-        user = user_response.json()
-    except requests.RequestException as e:
-        print(f"Request failed: {e}")
-        return
+    user_response = requests.get(users_url)
+    user_response.raise_for_status()
+    user = user_response.json()
 
     EMPLOYEE_NAME = user.get("name")
     TOTAL_NUMBER_OF_TASKS = 0
