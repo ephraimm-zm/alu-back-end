@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""script to get todos"""
 
 import requests
 import sys
 
 def main():
+	"""main function"""
 	base_url = "https://jsonplaceholder.typicode.com/"
 	employee_id = sys.argv[1]
 	employee_info = requests.get(f"{base_url}users/{employee_id}").json()
