@@ -8,7 +8,7 @@ import sys
 def main():
     """main function"""
     employeeID = int(sys.argv[1])
-    
+
     todos_url = "https://jsonplaceholder.typicode.com/todos"
     users_url = f"https://jsonplaceholder.typicode.com/users/{employeeID}"
 
